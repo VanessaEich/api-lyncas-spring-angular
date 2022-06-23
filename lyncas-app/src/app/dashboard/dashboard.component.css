@@ -1,0 +1,17 @@
+.home {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  margin-top: 5rem;
+}
+
+@media screen and (max-width: 670px) {
+  h2 {
+    font-size: 20px;
+  }
+
+}

@@ -1,0 +1,13 @@
+@font-face {
+  src: url("./assets/fontes/MerriweatherSans-Regular.ttf");
+  font-family: MerriweatherRegular;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: MerriweatherRegular;
+  border: none;
+}

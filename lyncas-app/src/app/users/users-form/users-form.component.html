@@ -1,0 +1,103 @@
+<div class="areacadastro">
+
+  <div class="mensagem">
+    <div class="alert alert-success" role="alert" *ngIf="success == true">
+      {{ user.userId ? "Usuário atualizado com sucesso!" : "Usuário cadastrado com sucesso!"  }}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+      {{ erro }}
+    </div>
+  </div>
+
+  <div class="cabecalho">
+    <h4>{{ user.userId ? "Usuários/ Atualizar" : "Usuários/ Cadastrar"  }}</h4>
+  </div>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit()" class="cadastro" name="cadastro">
+
+    <div class="campo">
+      <label>Nome</label>
+      <input type="text" name="name" [(ngModel)]="user.name" required #name="ngModel">
+      <div class="validation-field" *ngIf="!name.valid && name.touched">
+        Campo nome é obrigatório.
+      </div>
+    </div>
+
+    <div class="campo">
+      <label>Sobrenome</label>
+      <input type="text" name="lastName" [(ngModel)]="user.lastName" required #lastName="ngModel">
+      <div class="validation-field" *ngIf="!lastName.valid && lastName.touched">
+        Campo sobrenome é obrigatório.
+      </div>
+    </div>
+
+    <div class="campo">
+      <label>Telefone</label>
+      <input type="text" name="telephone" [(ngModel)]="user.telephone" mask="(00) 0000-0000||(00) 0 0000-0000" required
+        #telephone="ngModel">
+      <div class="validation-field" *ngIf="!telephone.valid && telephone.touched">
+        Número de telefone inválido.
+      </div>
+    </div>
+
+    <div class="campo">
+      <label>Data de Nascimento</label>
+      <input type="date" [(ngModel)]="user.birthDate" name="birthDate" date="dd/MM/yyyy" required #birthDate="ngModel">
+      <div class="validation-field" *ngIf="!birthDate.valid && birthDate.touched">
+        Campo data de nascimento é obrigatório.
+      </div>
+    </div>
+
+    <div class="campo" id="email">
+      <label>E-mail</label>
+      <input type="email" name="login" id="email3" [(ngModel)]="user.login" required email #login="ngModel"
+        pattern=".+[@].+[\.].+">
+      <div class="validation-field" *ngIf="!login.valid && login.touched">
+        E-mail inválido.
+      </div>
+    </div>
+
+    <div class="campo" *ngIf="!user.userId">
+      <label>Senha</label>
+      <input type="password" name="password" [(ngModel)]="user.password" required password #password="ngModel"
+        pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{6,}$">
+      <div class="validation-field" *ngIf="!password.valid && password.touched">
+        Senha deve conter pelo menos 6 caracteres e 1 número.
+      </div>
+    </div>
+    <div class="campo" *ngIf="user.userId">
+      <label>Senha</label>
+      <input type="password" name="password" [(ngModel)]="user.password" password #password="ngModel"
+        pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{6,}$">
+      <div class="validation-field" *ngIf="!password.valid && password.touched">
+        Senha deve conter 6 caracteres e 1 número.
+      </div>
+    </div>
+
+    <div class="campo" *ngIf="!user.userId">
+      <label>Repetir Senha</label>
+      <input type="password" name="repeatPassword" [(ngModel)]="repeatPassword" required>
+      <div class="validation-field" *ngIf="repeatPassword != user.password">
+        Senhas não conferem.
+      </div>
+    </div>
+    <div class="campo" *ngIf="user.userId">
+      <label>Repetir Senha</label>
+      <input type="password" name="repeatPassword" [(ngModel)]="repeatPassword">
+      <div class="validation-field" *ngIf="repeatPassword != user.password">
+        Senhas não conferem.
+      </div>
+    </div>
+
+    <div class="ativo">
+      <div class="at1">
+        <input class="ckeck" type="checkbox" [(ngModel)]="user.status" name="status">
+        <label class="lbativo">Ativo</label>
+      </div>
+
+      <button class="cadastrar" type="submit" *ngIf="!user.userId" [disabled]="!f.valid">Cadastrar</button>
+      <button class="cadastrar" type="submit" *ngIf="user.userId" [disabled]="!f.valid">Atualizar</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<body>
+  <div id="login-container">
+    <div class='logo-lyncas'>
+      <img src="/assets/Logo_Azul2x.png" alt="logo Lyncas" id='logo-lyncas-img'>
+    </div>
+    <div class="header">
+      <div class="login-text">LOGIN</div>
+    </div>
+    <div class='form-login'>
+      <form id="formulario" (submit)="onSubmit()">
+
+        <input type="email" id="email" name="login" [(ngModel)]="login" placeholder="E-mail" autocomplete="off"
+          required>
+        <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Senha"
+          autocomplete="off" required>
+        <div class="alert alert-danger erro" *ngFor="let erro of errors">
+          {{ erro }}
+        </div>
+        <button type="submit" class="log">Log In</button>
+      </form>
+    </div>
+  </div>
+</body>

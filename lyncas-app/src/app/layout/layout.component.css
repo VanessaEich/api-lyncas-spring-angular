@@ -1,0 +1,163 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #f9f9f9;
+}
+
+.item1 {
+  background-color: #0f1b35;
+  height: 100vh;
+}
+
+.item-1-escondido {
+  width: 0px;
+  visibility: hidden;
+}
+
+.item-1-aberto {
+  width: 200px;
+}
+
+.area2 {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 12vh 1fr;
+}
+
+.area2-aberto {
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  background-color: white;
+  width: "calc(100% - 200px)";
+}
+
+.item3 {
+  margin: 30px 30px 0 30px;
+  width: "calc(100% - 200px)";
+  overflow: auto;
+}
+
+.icon-clickable:hover {
+  cursor: pointer;
+}
+
+.fa-align-right {
+  font-size: 1rem;
+  color: blue;
+  margin: 30px;
+}
+
+.usuario {
+  margin-left: auto;
+  display: flex;
+  margin-right: 2rem;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.foto {
+  display: flex;
+  margin-right: 0.5rem;
+}
+
+.img-user {
+  width: 3.0rem;
+  border-radius: 50%;
+}
+
+button {
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo>img {
+  width: 150px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  color: whitesmoke;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+  height: 40px;
+  width: 185px;
+}
+
+.bx-chevron-right {
+  margin-left: auto;
+  font-size: 1.5rem;
+}
+
+.bx-grid-alt,
+.bxs-user-account {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 670px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .fa-align-right {
+    font-size: 0.9rem;
+  }
+
+  .usuario {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .logo>img {
+    width: 100px;
+  }
+
+  .item-1-aberto {
+    width: 100px;
+  }
+
+  a {
+    font-size: 0.8rem;
+  }
+
+  .bx-grid-alt,
+  .bxs-user-account,
+  .bx-chevron-right {
+    font-size: 1.0rem;
+  }
+
+  .bx-grid-alt,
+  .bxs-user-account {
+    margin-right: 0.5rem;
+
+  }
+
+}

@@ -1,0 +1,133 @@
+@font-face {
+  src: url("/src/assets/fontes/MerriweatherSans-Bold.ttf");
+  font-family: MerriweatherBold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.login-text {
+  font-size: 1.8rem;
+}
+
+.logo-lyncas {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
+#logo-lyncas-img {
+  width: 40%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  padding: 15px;
+  border-top-left-radius: 0.65vh;
+  border-top-right-radius: 0.65vh;
+  background-color: #0f1b35;
+  width: 100%;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding: 30px;
+  border: 1px solid grey;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+}
+
+input {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 4%;
+  font-size: 12px;
+  border: 1px solid #f9f9f9;
+}
+
+button {
+  display: flex;
+  background-color: #0f1b35;
+  border-radius: 3vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-size: 12px;
+  color: white;
+}
+
+.log:hover {
+  cursor: pointer;
+}
+
+.erro {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+button:active {
+  transform: translateY(4px) translateX(4px);
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border: 1px solid red !important;
+}
+
+@media screen and (max-width: 750px) {
+  #login-container {
+    width: 70%;
+  }
+
+  .login-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #login-container {
+    width: 90%;
+  }
+
+  .header,
+  input,
+  button {
+    font-size: 9px;
+  }
+
+  #logo-lyncas-img {
+    width: 60%;
+  }
+
+  .login-text {
+    font-size: 1rem;
+  }
+}

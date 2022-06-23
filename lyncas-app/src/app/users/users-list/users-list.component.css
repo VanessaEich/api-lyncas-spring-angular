@@ -1,0 +1,330 @@
+.areacadastro {
+  background-color: white;
+  overflow: auto;
+}
+
+h4 {
+  padding: 30px 0px 30px 30px;
+}
+
+.box-search {
+  display: flex;
+  margin-left: auto;
+  width: 50%;
+  align-items: center;
+  margin-right: 2.8rem;
+}
+
+.caixa2 {
+  display: flex;
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+  align-items: center;
+}
+
+input {
+  font-size: 0.8rem;
+}
+
+input:placeholder-shown {
+  width: 80%;
+  height: 90%;
+  align-self: center;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.btadicionar {
+  width: 100px;
+  background-color: #0f1b35;
+  border-radius: 40px;
+  height: 40px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: white;
+}
+
+.btadicionar:hover {
+  cursor: pointer;
+}
+
+.btlupa {
+  display: flex;
+  height: 25px;
+  align-content: center;
+  margin: 15px 15px 15px 15px;
+  padding: 5px;
+  border: none;
+  border-right: 1px solid black;
+  background-color: white;
+}
+
+.bx-search {
+  font-size: 15px;
+}
+
+.areatabela {
+  display: flex;
+  margin: 0px 30px 30px 30px;
+  height: 100%;
+  max-height: 100%;
+  background-color: white;
+  overflow: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-spacing: 0 10px;
+  background-color: white;
+  border-collapse: separate;
+}
+
+.tabela thead {
+  font-size: 13px;
+  color: rgb(131, 130, 130);
+}
+
+.hnome,
+.hfone,
+.hemail,
+.hdtnasc,
+.hstatus,
+.hacoes {
+  display: flex;
+  align-items: center;
+  padding: 13px 9px 13px 9px;
+  border: 1px solid #f9f9f9;
+  border-right: none;
+}
+
+.hnome>i,
+.hfone>i,
+.hemail>i,
+.hdtnasc>i,
+.hstatus>i,
+.hacoes>i {
+  margin-left: auto;
+}
+
+.hfone,
+.hemail,
+.hdtnasc,
+.hstatus,
+.hacoes {
+  border-left: none;
+}
+
+.hacoes {
+  border-right: 1px solid #f9f9f9;
+}
+
+.tabela tbody {
+  color: rgb(131, 130, 130);
+}
+
+.tabela tbody::before {
+  content: "-";
+  display: block;
+  line-height: 2px;
+  color: transparent;
+}
+
+.tabela td {
+  background-color: #f9f9f9;
+  font-size: 12px;
+}
+
+#usuario {
+  display: flex;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dnome {
+  align-items: center;
+}
+
+.dnome,
+.dfone,
+.demail,
+.ddtnasc {
+  display: flex;
+  padding: 13px 9px 13px 9px;
+}
+
+.btnativo,
+.btInativo {
+  display: flex;
+  width: 50%;
+  border-radius: 3px;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.btnativo {
+  color: rgb(3, 213, 155);
+  background-color: rgb(225, 253, 241);
+}
+
+.btInativo {
+  color: rgb(235, 77, 37);
+  background-color: rgb(250, 229, 229);
+}
+
+.bx-edit {
+  margin-right: 5px;
+}
+
+.bxs-trash-alt,
+.bx-edit {
+  font-size: 20px;
+  color: rgb(128, 17, 128);
+}
+
+.mensagem {
+  z-index: 1;
+  position: absolute;
+  margin-left: 25rem;
+}
+
+.cabecalho {
+  display: flex;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: center;
+}
+
+button:active {
+  transform: translateY(4px) translateX(4px);
+}
+
+@media screen and (max-width: 720px) {
+  h4 {
+    font-size: 15px;
+    padding: 15px 0px 15px 15px;
+  }
+
+  .caixa2 {
+    height: 30px;
+  }
+
+  input {
+    font-size: 0.5rem;
+  }
+
+  input:placeholder-shown {
+    width: 60%;
+    height: 90%;
+    font-size: 0.6rem;
+  }
+
+  .btadicionar {
+    width: 60px;
+    height: 25px;
+    font-size: 9px;
+  }
+
+  .box-search {
+    margin-right: 0.7rem;
+  }
+
+  .btlupa {
+    height: 25px;
+    margin: 8px 8px 8px 8px;
+    padding: 5px;
+  }
+
+  .areatabela {
+    margin: 0px 15px 15px 15px;
+  }
+
+  .tabela {
+    width: 100%;
+    border-spacing: 0 5px;
+    background-color: white;
+    border-collapse: separate;
+  }
+
+  .tabela thead {
+    font-size: 11px;
+  }
+
+  .tabela td {
+    font-size: 10px;
+  }
+
+  .hnome,
+  .hfone,
+  .hemail,
+  .hdtnasc,
+  .hstatus,
+  .hacoes {
+    padding: 11px 7px 11px 7px;
+  }
+
+  .dnome,
+  .dfone,
+  .demail,
+  .ddtnasc,
+  .dacoes {
+    padding: 11px 7px 11px 7px;
+  }
+
+  #usuario {
+    width: 25px;
+    margin-right: 5px;
+  }
+
+  .bx-edit,
+  .bxs-trash-alt {
+    font-size: 15px;
+  }
+
+  .btnativo,
+  .btInativo {
+    font-size: 9px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cabecalho {
+    flex-direction: column;
+  }
+
+  .box-search {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    flex-direction: column;
+  }
+
+  h4 {
+    font-size: 15px;
+    padding: 15px 0px 0px 15px;
+  }
+
+  .caixa2 {
+    width: 9rem;
+    margin-right: auto;
+    margin-left: 0.5rem;
+    margin-bottom: 5px;
+  }
+
+  .btadicionar {
+    margin-right: auto;
+  }
+
+  .btnativo,
+  .btInativo {
+    font-size: 9px;
+    margin-left: 10px;
+  }
+
+}

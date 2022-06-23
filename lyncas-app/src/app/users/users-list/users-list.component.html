@@ -1,0 +1,101 @@
+<div class="mensagem">
+  <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso">
+    {{ mensagemSucesso }}
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="mensagemErro">
+    {{ mensagemErro }}
+  </div>
+</div>
+
+<div class="areacadastro">
+
+  <div class="cabecalho">
+    <h4>Usuários</h4>
+
+    <div class="box-search">
+      <div class="caixa2">
+        <button class="btlupa"><i class='bx bx-search'></i></button>
+        <input type="text" name="name" placeholder="Buscar usuários" [(ngModel)]="name" (keyup)="consultar()"
+          autocomplete="off">
+      </div>
+      <button class="btadicionar" (click)="novoCadastro()">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="areatabela">
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>
+            <div class="hnome">Nome<i class='bx bx-sort-alt-2'></i></div>
+          </th>
+          <th>
+            <div class="hfone">Telefone<i class='bx bx-sort-alt-2'></i></div>
+          </th>
+          <th>
+            <div class="hemail">Email<i class='bx bx-sort-alt-2'></i></div>
+          </th>
+          <th>
+            <div class="hdtnasc">Data Nasc.<i class='bx bx-sort-alt-2'></i></div>
+          </th>
+          <th>
+            <div class="hstatus">Status<i class='bx bx-sort-alt-2'></i></div>
+          </th>
+          <th>
+            <div class="hacoes">Ações<i class='bx bx-sort-alt-2'></i></div>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of users">
+
+          <td class="dnome"><img src="/assets/usuario.jpg" alt="usuario" id='usuario'>
+            {{ user.name }} {{ user.lastName }} </td>
+
+          <td>{{ user.telephone | mask:'(00) 0000-0000||(00) 0 0000-0000' }}</td>
+          <td>{{ user.login }}</td>
+          <td> {{ user.birthDate | date:'dd/MM/yyyy' }} </td>
+
+
+          <td *ngIf="user.status == true">
+            <p class="btnativo">Ativo</p>
+          </td>
+          <td *ngIf="user.status == false">
+            <p class="btInativo">Inativo</p>
+          </td>
+
+
+          <td>
+            <div class="dacoes">
+              <button><i class='bx bx-edit' routerLink="/cadastro/{{ user.userId }}"></i></button>
+              <button><i class='bx bxs-trash-alt' (click)="preparaDelecao(user)" data-toggle="modal"
+                  data-target="#modalDelecao"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <mat-paginator [length]="totalElements" [pageSize]="tamanho" [pageSizeOptions]="pageSizeOptions"
+    (page)="paginar($event)">
+  </mat-paginator>
+
+  <div id="modalDelecao" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body" *ngIf="userSelecionado">
+          Deseja excluir {{ userSelecionado.name }} {{ userSelecionado.lastName }} ?
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-success" (click)="deletarUsuario()" data-dismiss="modal">Confirmar</button>
+          <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

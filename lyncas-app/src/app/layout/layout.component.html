@@ -1,0 +1,47 @@
+<body>
+
+  <div class="item1" [ngClass]="{'item-1-aberto':this.isOpen}" [ngClass]="{'item-1-escondido':!this.isOpen}">
+    <div class="logo" [ngClass]="{'item-1-aberto':this.isOpen}" [ngClass]="{'item-1-escondido':!this.isOpen}">
+      <img src="/assets/Fundo.png">
+    </div>
+
+    <ul [ngClass]="{'item-1-aberto':this.isOpen}" [ngClass]="{'item-1-escondido':!this.isOpen}">
+      <li>
+        <a routerLink="/dashboard">
+          <i class='bx bx-grid-alt'></i>
+          Dashboard<i class='bx bx-chevron-right'></i>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/lista">
+          <i class='bx bxs-user-account'></i>
+          Usuários<i class='bx bx-chevron-right'></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="area2" [ngClass]="{'area2-aberto':!this.isOpen}">
+    <div class="header">
+      <div class="icon-clickable" (click)="toggleMenu()">
+        <i class="fas fa-align-right "></i>
+      </div>
+      <div class="usuario">
+        <div class="foto">
+          <img class="img-user" src="/assets/usuario.jpg">
+        </div>
+        <div class="caixa">
+          <div class="nome">{{ usuarioLogado }}</div>
+          <button>
+            <div class="logout" (click)="logout()" href="#">Sair</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main class="item3">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+</body>
